@@ -1,0 +1,72 @@
+{
+  "name": "inline-image",
+  "version": "0.1.0",
+  "description": "Draws images inline in Claude Code replies: write ![alt](/path/to/image) and the picture appears under the text. Any format ImageMagick reads.",
+  "author": {
+    "name": "Adhika Setya Pramudita"
+  },
+  "license": "MIT",
+  "keywords": [
+    "image",
+    "terminal",
+    "kitty-graphics",
+    "ghostty",
+    "mod"
+  ],
+  "userConfig": {
+    "maxColumns": {
+      "type": "number",
+      "title": "Max width (columns)",
+      "description": "Widest an image may be, in terminal columns. It is also limited by the pane width.",
+      "default": 80,
+      "min": 8,
+      "max": 255
+    },
+    "maxRows": {
+      "type": "number",
+      "title": "Max height (rows)",
+      "description": "Tallest an image may be, in terminal rows.",
+      "default": 24,
+      "min": 1,
+      "max": 255
+    },
+    "maxImages": {
+      "type": "number",
+      "title": "Max images per message",
+      "description": "Extra images in one message are left as plain text.",
+      "default": 4,
+      "min": 1,
+      "max": 12
+    },
+    "cellAspect": {
+      "type": "number",
+      "title": "Cell aspect (height / width)",
+      "description": "How much taller a terminal cell is than wide. 2.0 to 2.2 is typical; it only affects how tall an image is drawn.",
+      "default": 2.1,
+      "min": 1,
+      "max": 4
+    },
+    "cellWidthPx": {
+      "type": "number",
+      "title": "Cell width in pixels (optional)",
+      "description": "Only needed if hairlines show between the rows of an image. With the cell height, each image is scaled to the exact pixel size of its box. 0 = detect it from the terminal when it reports it, otherwise off. To measure: screenshot width in pixels divided by the number of columns.",
+      "default": 0,
+      "min": 0,
+      "max": 200
+    },
+    "cellHeightPx": {
+      "type": "number",
+      "title": "Cell height in pixels (optional)",
+      "description": "See cell width. Screenshot height of one text row in pixels. 0 = detect / off.",
+      "default": 0,
+      "min": 0,
+      "max": 400
+    },
+    "allowRemote": {
+      "type": "boolean",
+      "title": "Allow http(s) images",
+      "description": "Download and show images given as web URLs. Off by default: a reply could otherwise make your machine fetch any URL.",
+      "default": false
+    }
+  }
+}

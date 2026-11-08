@@ -1,0 +1,11 @@
+{
+  "name": "claude-inline-image",
+  "owner": { "name": "Adhika Setya Pramudita" },
+  "plugins": [
+    {
+      "name": "inline-image",
+      "source": "./",
+      "description": "Draws images inline in Claude Code replies: write ![alt](/path/to/image) and the picture appears under the text."
+    }
+  ]
+}
